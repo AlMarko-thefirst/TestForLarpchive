@@ -98,8 +98,8 @@ namespace Test
             //{
             //    await Console.Out.WriteLineAsync(language.LanguageNameInEnglish);
             //}
-
             //l = await a.GetAllLanguages();
+
             //Console.WriteLine($"======Post======");
             //Languages l1 = new Languages()
             //{
@@ -136,13 +136,15 @@ namespace Test
             //ch = await a.GetAllChapters();
             //Console.WriteLine($"======Post======");
             //WorksList wch = await a.GetAllWorks();
-            //Chapters ch1 = new Chapters() { 
+            //Chapters ch1 = new Chapters()
+            //{
             //    ChapterName = "sMalik",
             //    ChapterNum = 2,
             //    Notes = "",
             //    Story = "",
             //    Summary = "",
-            //    WorkID = wch[3] };
+            //    WorkID = wch[3]
+            //};
             //await a.InsertChapter(ch1);
             //ch = await a.GetAllChapters();
             //await Console.Out.WriteLineAsync(ch.MaxBy(x => x.Id).ChapterName);
@@ -243,7 +245,6 @@ namespace Test
 
             //w = await a.GetAllWorks();
             //Console.WriteLine($"======Post======");
-
             //LanguageList WlList = await a.GetAllLanguages();
             //UserList WuList = await a.GetAllUsers();
             //PrivacyList WpList = await a.GetAllPrivacy();
@@ -325,10 +326,9 @@ namespace Test
             //    await Console.Out.WriteLineAsync(
             //        $"{admin.Email}, {admin.Username}, {admin.DateOfCreation}, {admin.IsVerified}");
             //}
-
             //ad = await a.GetAllAdmins();
-            //Console.WriteLine($"======Post======");
 
+            //Console.WriteLine($"======Post======");
             //Admin ad1 = new Admin()
             //{
             //    Id = 13,
@@ -341,17 +341,19 @@ namespace Test
             //await a.InsertAdmin(ad1);
             //ad = await a.GetAllAdmins();
             //Admin latestAdmin = ad.MaxBy(x => x.Id);
-            //await Console.Out.WriteLineAsync(
-            //    $"{latestAdmin.Email}, {latestAdmin.Username}, {latestAdmin.DateOfCreation}, {latestAdmin.IsVerified}");
+            //await Console.Out.WriteLineAsync($"{latestAdmin.Email}, {latestAdmin.Username}, {latestAdmin.DateOfCreation}, {latestAdmin.IsVerified}");
 
             //Console.WriteLine($"======Put======");
-            //Admin myAdmin = ad.MaxBy(x => x.Id);
-            //myAdmin.Username = "Random kid";
-            //await a.UpdateAdmin(myAdmin);
             //ad = await a.GetAllAdmins();
+            //Admin myAdmin = ad.MaxBy(x => x.Id);
+            //int adminId = myAdmin.Id;
+            //myAdmin.Username = "Random kid";
+            //int updated = await a.UpdateAdmin(myAdmin);
+            //Console.WriteLine($"{updated} rows were updated");
+            //ad = await a.GetAllAdmins();
+            //Admin updatedAdmin = ad.FirstOrDefault(x => x.Id == adminId);
             //latestAdmin = ad.MaxBy(x => x.Id);
-            //await Console.Out.WriteLineAsync(
-            //    $"{latestAdmin.Email}, {latestAdmin.Username}, {latestAdmin.DateOfCreation}, {latestAdmin.IsVerified}");
+            //await Console.Out.WriteLineAsync($"{latestAdmin.Email}, {latestAdmin.Username}, {latestAdmin.DateOfCreation}, {latestAdmin.IsVerified}");
 
             //Console.WriteLine($"======Delete======");
             //Console.WriteLine(ad.Count);
